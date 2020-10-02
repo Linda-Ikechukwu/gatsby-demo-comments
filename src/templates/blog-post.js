@@ -13,7 +13,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
 
   let gitalkConfig = {
-    id: post.fields.slug,
+    id: post.id,
     title: post.frontmatter.title,
   }
 
