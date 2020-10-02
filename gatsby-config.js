@@ -27,6 +27,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-gitalk`,
+      options: {
+        config: {
+          clientID: 'f16d485a306b836cabd1',
+          clientSecret: '6ee5e2a6c2a4992fc49aeab2740e6493bbc9cfae',
+          repo: 'gatsby-demo-comments',
+          owner: 'Linda-Ikechukwu',
+          admin: ['Linda-Ikechukwu']
+        }
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
