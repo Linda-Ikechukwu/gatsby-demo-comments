@@ -5,14 +5,17 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import 'gitalk/dist/gitalk.css'
-import Gitalk from 'gitalk'
-import GitalkComponent from "gitalk/dist/gitalk-component";
+import Gitalk from 'gatsby-plugin-gitalk';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = pageContext
+
+  let gitalkConfig = {
+    id: post.fields.slug,
+    title: post.frontmatter.title,
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -38,13 +41,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Bio />
         </footer>
       </article>
-      <GitalkComponent options={{
-        clientID: 'f16d485a306b836cabd1',
-        clientSecret: '6ee5e2a6c2a4992fc49aeab2740e6493bbc9cfae',
-        repo: 'gatsby-demo-comments',
-        owner: 'Linda-Ikechukwu',
-        admin: ['Linda-Ikechukwu']
-      }} />
+      <Gitalk options={gitalkConfig}/>
       <nav className="blog-post-nav">
         <ul
           style={{
