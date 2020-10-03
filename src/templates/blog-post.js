@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -17,7 +17,8 @@ import '@suziwen/gitalk/dist/gitalk.css' */
 //FOR COMMENTBOX
 /* import commentBox from 'commentbox.io'; */
 
-import Script from "react-inline-script"
+//FOR GRAPHCOMMENTS
+/* import Script from "react-inline-script" */
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -38,6 +39,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   /* useEffect(() =>{
     commentBox('5632596591509504-proj')
   }) */
+
+  useEffect(() => {
+    window.gc_params = {
+      graphcomment_id: 'codewithlinda',
+      fixed_header_height: 0,
+   };
+
+  (function() {
+    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+    gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+  })();
+ })
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -74,7 +88,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       {/* <div className="commentbox" /> */}
 
       <div id="graphcomment"></div>
-      <Script>
+      {/* <Script>
         {`
           window.gc_params = {
               graphcomment_id: 'codewithlinda',
@@ -87,7 +101,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
           })();
         `}
-      </Script>
+      </Script> */}
 
       <nav className="blog-post-nav">
         <ul
