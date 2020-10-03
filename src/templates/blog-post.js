@@ -5,18 +5,23 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import Gitalk from 'gatsby-plugin-gitalk';
-import '@suziwen/gitalk/dist/gitalk.css'
+/* import Gitalk from 'gatsby-plugin-gitalk';
+import '@suziwen/gitalk/dist/gitalk.css' */
+
+import Comments from 'remark-ninja-react'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = pageContext
 
-  let gitalkConfig = {
+  /* let gitalkConfig = {
     id: post.id,
     title: post.frontmatter.title,
-  }
+  } */
+
+  const siteID = '12dcbf8c-34a0-480f-8ec3-718de293b101';
+  const threadSlug = post.frontmatter.title;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -42,7 +47,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Bio />
         </footer>
       </article>
-      <Gitalk options={gitalkConfig}/>
+
+      {/* <Gitalk options={gitalkConfig}/> */}
+
+      <Comments siteId={siteID} threadSlug={threadSlug} />
+
       <nav className="blog-post-nav">
         <ul
           style={{
