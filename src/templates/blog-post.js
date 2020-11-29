@@ -7,51 +7,20 @@ import SEO from "../components/seo"
 
 
 //FOR GITTALK
-/* import Gitalk from 'gatsby-plugin-gitalk';
-import '@suziwen/gitalk/dist/gitalk.css' */
-
-
-//FOR REMARK
-/* import Comments from 'remark-ninja-react' */
-
-//FOR COMMENTBOX
-/* import commentBox from 'commentbox.io'; */
-
-//FOR GRAPHCOMMENTS
-/* import Script from "react-inline-script" */
+import Gitalk from 'gatsby-plugin-gitalk';
+import '@suziwen/gitalk/dist/gitalk.css'
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = pageContext
 
-  //CONFIG FOR GITTALK
-  /* let gitalkConfig = {
+
+  let gitalkConfig = {
     id: post.id,
     title: post.frontmatter.title,
-  } */
+  }
 
-  // CONFIG FOR REMARK
-  /* const siteID = '12dcbf8c-34a0-480f-8ec3-718de293b101';
-  const threadSlug = post.frontmatter.title; */
-
-  // CONFIG FOR COMMENTBOX
-  /* useEffect(() =>{
-    commentBox('5632596591509504-proj')
-  }) */
-
-  useEffect(() => {
-    window.gc_params = {
-      graphcomment_id: 'codewithlinda',
-      fixed_header_height: 0,
-   };
-
-  (function() {
-    var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
-    gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
-  })();
- })
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -79,29 +48,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </article>
 
       {/* //FOR GITTALK */}
-      {/* <Gitalk options={gitalkConfig}/> */}
-
-      {/* //FOR REMARK */}
-      {/* <Comments siteId={siteID} threadSlug={threadSlug} /> */}
-
-      {/* //FOR COMMENTSBOX */}
-      {/* <div className="commentbox" /> */}
-
-      <div id="graphcomment"></div>
-      {/* <Script>
-        {`
-          window.gc_params = {
-              graphcomment_id: 'codewithlinda',
-              fixed_header_height: 0,
-          };
-
-          (function() {
-            var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
-            gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
-          })();
-        `}
-      </Script> */}
+      <Gitalk options={gitalkConfig}/>
 
       <nav className="blog-post-nav">
         <ul
