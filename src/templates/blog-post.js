@@ -7,15 +7,15 @@ import SEO from "../components/seo"
 
 
 //FOR GITTALK
-import Gitalk from 'gatsby-plugin-gitalk';
-import '@suziwen/gitalk/dist/gitalk.css'
+/* import Gitalk from 'gatsby-plugin-gitalk';
+import '@suziwen/gitalk/dist/gitalk.css' */
 
 
 //FOR REMARK
 /* import Comments from 'remark-ninja-react' */
 
 //FOR COMMENTBOX
-/* import commentBox from 'commentbox.io'; */
+import commentBox from 'commentbox.io';
 
 //FOR GRAPHCOMMENTS
 /* import Script from "react-inline-script" */
@@ -26,19 +26,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
 
   //CONFIG FOR GITTALK
-  let gitalkConfig = {
+  /* let gitalkConfig = {
     id: post.id,
     title: post.frontmatter.title,
-  }
+  } */
 
   // CONFIG FOR REMARK
   /* const siteID = '12dcbf8c-34a0-480f-8ec3-718de293b101';
   const threadSlug = post.frontmatter.title; */
 
   // CONFIG FOR COMMENTBOX
-  /* useEffect(() =>{
+  useEffect(() =>{
     commentBox('5632596591509504-proj')
-  }) */
+  },[])
 
   /* useEffect(() => {
     window.gc_params = {
@@ -79,13 +79,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </article>
 
       {/* //FOR GITTALK */}
-      <Gitalk options={gitalkConfig}/>
+      {/* <Gitalk options={gitalkConfig}/> */}
 
       {/* //FOR REMARK */}
       {/* <Comments siteId={siteID} threadSlug={threadSlug} /> */}
 
       {/* //FOR COMMENTSBOX */}
-      {/* <div className="commentbox" /> */}
+       <div className="commentbox" />
 
       {/* <div id="graphcomment"></div> */}
       {/* <Script>
