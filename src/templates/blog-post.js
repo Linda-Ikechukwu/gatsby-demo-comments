@@ -10,16 +10,18 @@ import SEO from "../components/seo"
 import Gitalk from 'gatsby-plugin-gitalk';
 import '@suziwen/gitalk/dist/gitalk.css'
 
+
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = pageContext
 
-
+  //CONFIG FOR GITTALK
   let gitalkConfig = {
     id: post.id,
     title: post.frontmatter.title,
   }
+
 
 
   return (
@@ -49,6 +51,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
       {/* //FOR GITTALK */}
       <Gitalk options={gitalkConfig}/>
+
 
       <nav className="blog-post-nav">
         <ul
