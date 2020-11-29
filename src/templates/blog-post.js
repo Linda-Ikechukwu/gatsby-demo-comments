@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 
 //FOR GITTALK
  import Gitalk from 'gatsby-plugin-gitalk';
-import '@suziwen/gitalk/dist/gitalk.css' 
+import '@suziwen/gitalk/dist/gitalk.css'
 
 
 //FOR REMARK
@@ -26,10 +26,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
 
   //CONFIG FOR GITTALK
-  let gitalkConfig = {
+  /* let gitalkConfig = {
     id: post.id,
     title: post.frontmatter.title,
-  } 
+  }  */
 
   // CONFIG FOR REMARK
   /* const siteID = '12dcbf8c-34a0-480f-8ec3-718de293b101';
@@ -40,11 +40,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     commentBox('5632596591509504-proj')
   },[])
 
-<<<<<<< HEAD
   /* useEffect(() => {
-=======
-  /*useEffect(() => {
->>>>>>> 52f53e147c7dd2fd3ddd6c822866533f0eec70d9
     window.gc_params = {
       graphcomment_id: 'codewithlinda',
       fixed_header_height: 0,
@@ -55,11 +51,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
   })();
-<<<<<<< HEAD
  }) */
-=======
- })*/
->>>>>>> 52f53e147c7dd2fd3ddd6c822866533f0eec70d9
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -87,7 +79,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </article>
 
       {/* //FOR GITTALK */}
-      <Gitalk options={gitalkConfig}/> 
+      {/* <Gitalk options={gitalkConfig}/> */}
 
       {/* //FOR REMARK */}
       {/* <Comments siteId={siteID} threadSlug={threadSlug} /> */}
@@ -95,11 +87,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       {/* //FOR COMMENTSBOX */}
        <div className="commentbox" />
 
-<<<<<<< HEAD
       {/* <div id="graphcomment"></div> */}
-=======
-      /*<div id="graphcomment"></div>*/
->>>>>>> 52f53e147c7dd2fd3ddd6c822866533f0eec70d9
       {/* <Script>
         {`
           window.gc_params = {
