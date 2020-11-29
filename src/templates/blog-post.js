@@ -7,8 +7,8 @@ import SEO from "../components/seo"
 
 
 //FOR GITTALK
- import Gitalk from 'gatsby-plugin-gitalk';
-import '@suziwen/gitalk/dist/gitalk.css'
+ /*import Gitalk from 'gatsby-plugin-gitalk';
+import '@suziwen/gitalk/dist/gitalk.css'*/
 
 
 //FOR REMARK
