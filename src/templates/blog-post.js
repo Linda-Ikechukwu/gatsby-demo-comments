@@ -15,7 +15,7 @@ import '@suziwen/gitalk/dist/gitalk.css'*/
 /* import Comments from 'remark-ninja-react' */
 
 //FOR COMMENTBOX
-import commentBox from 'commentbox.io';
+/*import commentBox from 'commentbox.io';*/
 
 //FOR GRAPHCOMMENTS
 /* import Script from "react-inline-script" */
@@ -36,11 +36,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const threadSlug = post.frontmatter.title; */
 
   // CONFIG FOR COMMENTBOX
-  useEffect(() =>{
+  /*useEffect(() =>{
     commentBox('5632596591509504-proj')
-  },[])
+  },[])*/
 
-  /* useEffect(() => {
+  useEffect(() => {
     window.gc_params = {
       graphcomment_id: 'codewithlinda',
       fixed_header_height: 0,
@@ -51,7 +51,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     gc.src = 'https://graphcomment.com/js/integration.js?' + Math.round(Math.random() * 1e8);
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
   })();
- }) */
+ }) 
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -85,9 +85,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       {/* <Comments siteId={siteID} threadSlug={threadSlug} /> */}
 
       {/* //FOR COMMENTSBOX */}
-       <div className="commentbox" />
+       /*<div className="commentbox" />*/
 
-      {/* <div id="graphcomment"></div> */}
+       <div id="graphcomment"></div> 
       {/* <Script>
         {`
           window.gc_params = {
